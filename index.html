@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Memento Cafe Brand Story Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf6317",
+                        "background-light": "#fcfaf8",
+                        "background-dark": "#1b130e",
+                        "paper": "#f4f0e8",
+                        "ink": "#2d2a26"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Courier Prime", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-light text-ink antialiased;
+            }
+        }
+        .paper-texture {
+            background-color: #f4f0e8;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCNuK9nyeCxXMjroNGnQbrlNQX5TjHcTrlxN7HRMNEzAeEiu2eDBQC2racbbia_Kb58SmrhRsyweW3woAF9KkUz6-9xJLvyHwLHJGEU8ZZ0M25nnnSq8ApkI_0Dm7TQ-JUxOGiQdU0QzQrJC2Jq-G0wcwJC8MaTQePoMTfGU-n2N1t4l5byWMcHrA8QSakOg5pv_uPu3qrwOrsUeaSUvyr0xHZDxTXwAoGUYdb0gui5utptmql9KISQ6dEE7jBBCxoLyuOOswjde0I);
+            background-blend-mode: multiply;
+        }
+        .dark .paper-texture {
+            background-color: #211811;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCWhcLQAe18PxA0HZ_9T7t7BNmgHL4lGbRCGAPAzwOHy_CRLJMw1On3qxl4woIMJcfkYfjhwX8m4FnR1-mKKCmIAe7iK3KIkinbwX3f2hQnxnHrqfOtVu2aJxYinhwReOindbG59CAMr1xDqcSI_A1wf7ajD4tscPEjr5faZ9gMAOSDaDlchJQQljkiLkA3-kq2JkF8CTnVBRT25Tp16pNL6x33LKKALmfDeohdPhzwxV-iRkbzsDxIE8IUwoHO79u6Cjm6Y45f18k);
+            background-blend-mode: lighten;
+        }
+        .typewriter {
+            font-family: "Courier Prime", monospace;
+        }
+        .ink-stamp {
+            transform: rotate(-3deg);
+            border: 2px solid #cf6317;
+            color: #cf6317;
+            padding: 4px 12px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+        .ledger-line {
+            border-bottom: 1px solid rgba(207, 99, 23, 0.2);
+        }
+        .split-bg {
+            background: linear-gradient(to bottom, #fcfaf8 0%, #fcfaf8 350px, #f4f0e8 350px, #f4f0e8 100%);
+        }
+        .dark .split-bg {
+            background: linear-gradient(to bottom, #1b130e 0%, #1b130e 350px, #211811 350px, #211811 100%);
+        }
+        .authorized-note {
+            border: 2px solid #1b130e;
+            padding: 1.5rem;
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+        .dark .authorized-note {
+            border-color: #fcfaf8;
+        }
+    </style>
+</head>
+<body class="split-bg min-h-screen transition-colors duration-300">
+<div class="layout-container flex flex-col items-center">
+<header class="w-full max-w-[1200px] flex items-center justify-between px-8 py-8">
+<div class="flex items-center gap-4">
+<div class="size-10 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-2xl font-black tracking-tighter uppercase leading-none">Memento</h1>
+<span class="typewriter text-[10px] uppercase tracking-widest text-primary font-bold">Cafe &amp; Bread</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="menu.html">Catalog</a>
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="reading_room.html">Roastery</a>
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="activities.html">Community Log</a>
+        <a class="typewriter text-xs font-bold border-b-2 border-primary text-primary hover:text-primary transition-colors uppercase tracking-widest" href="index.html">Our Story</a>
+        <a href="location.html" class="bg-primary text-white px-6 py-2 typewriter text-xs font-bold uppercase tracking-widest shadow-sm hover:opacity-90 transition-opacity">
+                            Access Archive
+                        </a>
+        </nav>
+</header>
+<main class="w-full max-w-[1200px] px-6 py-8">
+<div class="paper-texture border border-black/10 dark:border-white/10 p-8 md:p-20 shadow-2xl relative">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 border-b border-primary/30 pb-12 mb-16">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-4">
+<span class="typewriter text-[11px] bg-primary text-white px-2 py-0.5 font-bold uppercase">Classification: Public Record</span>
+<span class="typewriter text-[11px] opacity-60 uppercase">Dossier ID: #82-ORGN-BREAD</span>
+</div>
+<h2 class="text-6xl font-black uppercase mb-6 leading-[0.9]">The Brand Narrative</h2>
+<p class="typewriter text-sm leading-relaxed opacity-80">
+                            A comprehensive summation of the Memento ethos. This document serves as the foundational text for our operations, detailing the intersection of traditional baking, slow-process roasting, and the archival preservation of community memory.
+                        </p>
+</div>
+<div class="flex flex-col items-end gap-3 shrink-0">
+<div class="ink-stamp">
+<span class="typewriter text-xs">FILED: SEP 12 1982</span>
+</div>
+<div class="ink-stamp !border-black dark:!border-white !text-black dark:!text-white opacity-40">
+<span class="typewriter text-[10px]">CERTIFIED AUTHENTIC</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 space-y-12 border-r border-primary/10 pr-12 hidden lg:block">
+<div class="space-y-4">
+<h4 class="typewriter text-xs font-bold text-primary uppercase border-b border-primary/20 pb-1 tracking-widest">Metadata</h4>
+<div class="grid grid-cols-2 gap-y-3 text-[11px] typewriter uppercase opacity-70">
+<span>Origins:</span> <span class="text-right font-bold">Wild Yeast</span>
+<span>Temp:</span> <span class="text-right font-bold">205°F Standard</span>
+<span>Binding:</span> <span class="text-right font-bold">Linen Thread</span>
+<span>Curator:</span> <span class="text-right font-bold">E. Hawthorne</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="typewriter text-xs font-bold text-primary uppercase border-b border-primary/20 pb-1 tracking-widest">Reference 01-A</h4>
+<div class="aspect-square bg-[#e8e2d6] dark:bg-black/20 p-4 border border-primary/10">
+<img alt="Vintage Bakery" class="grayscale contrast-125 opacity-70 mix-blend-multiply dark:mix-blend-lighten object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFtfovkksF8Vhmr-pAmYxngV412trL8MhXWLItrCAANrsYzqcIyB29cbrZs0StsuML1ADwNTeqhvU8fLbDHndpiiECTsmR5GE54sVvFIG8UrELEmaMaJVuULRtzePtV7dQj3AaZR4rby2AjuwizEQfhj7yt7lvcd-O2rjsrUqvikePa04maEbIPoY4p9ozYh8WVF2wgc0brjRGC7dCBVoj3QIwzsqt2AGjJpLJ8zqBV_5fxFakxfhcpUf4v5hnF2mGN9RlXi3pCPg"/>
+</div>
+<p class="typewriter text-[10px] italic leading-tight opacity-60 text-center uppercase">Fig A. The original hearth oven, harvested embers, 1985.</p>
+</div>
+<div class="p-4 border-2 border-dashed border-primary/30">
+<p class="typewriter text-[10px] leading-relaxed opacity-60 uppercase text-center">
+                                "Time is the primary ingredient. We do not rush the dough. We do not rush the story."
+                            </p>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-16">
+<section class="space-y-6">
+<h3 class="typewriter text-xs font-bold text-primary uppercase tracking-[0.3em]">The Pillars / Catalog Entries</h3>
+<div class="group relative pl-12 pb-12 border-l-2 border-primary/10">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center gap-4 mb-4">
+<span class="typewriter text-xs font-bold text-primary uppercase">[ENTRY_01: HOME]</span>
+<span class="h-px grow bg-primary/20"></span>
+<span class="typewriter text-[10px] opacity-40 uppercase">Archival File 4-11</span>
+</div>
+<h4 class="text-3xl font-bold mb-4 uppercase">The Comfort of Home</h4>
+<p class="typewriter text-sm leading-relaxed mb-6 opacity-80 first-letter:text-4xl first-letter:font-black first-letter:mr-1 first-letter:float-left first-letter:leading-none">
+                                    We believe that every cafe should feel like a rediscovered memory. The scent of warm cardamom, the tactile weight of a ceramic mug, and the golden crust of a baguette are the blueprints of a sanctuary. At Memento, the comfort of home isn't a style; it's a sensory archive we meticulously curate for every guest who walks through our doors.
+                                </p>
+<div class="ledger-line w-full opacity-30"></div>
+</div>
+<div class="group relative pl-12 pb-12 border-l-2 border-primary/10">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center gap-4 mb-4">
+<span class="typewriter text-xs font-bold text-primary uppercase">[ENTRY_02: WISDOM]</span>
+<span class="h-px grow bg-primary/20"></span>
+<span class="typewriter text-[10px] opacity-40 uppercase">Shelf Ref: LIB-09</span>
+</div>
+<h4 class="text-3xl font-bold mb-4 uppercase">The Wisdom of the Library</h4>
+<p class="typewriter text-sm leading-relaxed mb-6 opacity-80">
+                                    Like a rare manuscript, coffee and bread are records of history, climate, and craft. Our baristas and bakers are librarians of flavor, cataloging the nuances of high-altitude beans and heritage grains. We approach our work with the quiet reverence of a reading room—where every pour-over is a study and every loaf is a chapter of a larger narrative.
+                                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary/5 p-4 border border-primary/10">
+<p class="typewriter text-[10px] font-bold uppercase mb-1">Vol. 12: Roasting Log</p>
+<p class="typewriter text-[11px] italic opacity-60">"Caramelization achieved at 8:12—notes of leather and plum recorded."</p>
+</div>
+<div class="bg-primary/5 p-4 border border-primary/10">
+<p class="typewriter text-[10px] font-bold uppercase mb-1">Vol. 08: Sourdough Stats</p>
+<p class="typewriter text-[11px] italic opacity-60">"Hydration levels adjusted for coastal humidity. Crumb structure optimized."</p>
+</div>
+</div>
+<div class="ledger-line w-full opacity-30 mt-6"></div>
+</div>
+<div class="group relative pl-12 border-l-2 border-primary/10">
+<div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full group-hover:scale-125 transition-transform"></div>
+<div class="flex items-center gap-4 mb-4">
+<span class="typewriter text-xs font-bold text-primary uppercase">[ENTRY_03: SPIRIT]</span>
+<span class="h-px grow bg-primary/20"></span>
+<span class="typewriter text-[10px] opacity-40 uppercase">Public Access Entry</span>
+</div>
+<h4 class="text-3xl font-bold mb-4 uppercase">The Spirit of Community</h4>
+<p class="typewriter text-sm leading-relaxed mb-6 opacity-80">
+                                    A library is nothing without its readers. Memento is more than a destination; it is a shared ledger of the neighborhood. Every conversation over coffee is an entry in our living history. We exist to foster connection, providing the space and the substance for the community to write its own stories, one morning at a time.
+                                </p>
+</div>
+</section>
+<div class="mt-20 authorized-note paper-texture border-2 border-ink dark:border-white shadow-lg">
+<div class="flex justify-between items-start mb-6">
+<div class="typewriter text-[10px] font-bold uppercase tracking-widest">
+                                    OFFICIAL AUTHORIZED NOTE
+                                </div>
+<div class="material-symbols-outlined text-primary">verified_user</div>
+</div>
+<div class="text-center py-8">
+<p class="typewriter text-2xl font-black uppercase tracking-[0.2em] mb-4">Pause. Sip. Remember.</p>
+<div class="flex justify-center gap-4 opacity-50">
+<span class="h-px w-12 bg-ink dark:bg-white self-center"></span>
+<span class="typewriter text-[10px] uppercase">The Memento Mantra</span>
+<span class="h-px w-12 bg-ink dark:bg-white self-center"></span>
+</div>
+</div>
+<div class="flex justify-between items-end pt-6 border-t border-ink/10 dark:border-white/10">
+<div>
+<p class="typewriter text-[9px] uppercase opacity-60">Authorized Signature</p>
+<p class="font-serif italic text-lg opacity-80">E. Hawthorne</p>
+</div>
+<div class="text-right">
+<div class="ink-stamp !rotate-0 !border-primary/40 !text-primary/60">
+<span class="typewriter text-[10px]">ARCHIVE COMPLETED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-primary/10 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-primary/10 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-primary/10 pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-primary/10 pointer-events-none"></div>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-0 border border-primary/20 divide-x divide-y md:divide-y-0 divide-primary/20">
+<a class="group p-8 hover:bg-primary transition-colors flex flex-col items-center text-center" href="menu.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-4 text-3xl">auto_stories</span>
+<h4 class="typewriter text-xs font-bold uppercase mb-2 group-hover:text-white">Recipe Ledger</h4>
+<p class="text-[10px] typewriter opacity-60 group-hover:text-white/80 uppercase">Formulaic Secrets of the Hearth</p>
+</a>
+<a class="group p-8 hover:bg-primary transition-colors flex flex-col items-center text-center" href="reading_room.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-4 text-3xl">local_library</span>
+<h4 class="typewriter text-xs font-bold uppercase mb-2 group-hover:text-white">The Reading Room</h4>
+<p class="text-[10px] typewriter opacity-60 group-hover:text-white/80 uppercase">Our Curated Periodical Selection</p>
+</a>
+<a class="group p-8 hover:bg-primary transition-colors flex flex-col items-center text-center" href="activities.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-4 text-3xl">history_edu</span>
+<h4 class="typewriter text-xs font-bold uppercase mb-2 group-hover:text-white">Daily Ledger</h4>
+<p class="text-[10px] typewriter opacity-60 group-hover:text-white/80 uppercase">Community Notes &amp; Observations</p>
+</a>
+</div>
+</main>
+<footer class="w-full py-20 text-center">
+<div class="flex flex-col items-center gap-6 mb-12">
+<div class="h-12 w-px bg-primary/30"></div>
+<p class="typewriter text-[11px] uppercase tracking-widest max-w-xs opacity-60">
+                    Proprietary information of Memento Records Division. No duplication without authorization from the Curator.
+                </p>
+</div>
+<div class="flex justify-center gap-12 mb-8">
+<a class="typewriter text-[10px] uppercase hover:text-primary transition-colors font-bold" href="index.html">Site Index</a>
+<a class="typewriter text-[10px] uppercase hover:text-primary transition-colors font-bold" href="location.html">Access Rights</a>
+<a class="typewriter text-[10px] uppercase hover:text-primary transition-colors font-bold" href="reservation.html">File Inquiry</a>
+</div>
+<div class="opacity-40 text-[10px] tracking-[0.3em] uppercase">
+                © 1982-2024 Memento Cafe &amp; Bread. Records Division.
+            </div>
+</footer>
+</div>
+<a class="fixed bottom-10 right-10 z-50 flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full shadow-2xl hover:scale-110 transition-transform group" href="reservation.html">
+<span class="material-symbols-outlined text-3xl">edit_note</span>
+<span class="absolute right-20 bg-ink text-white typewriter text-[10px] px-3 py-1 uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Sign the Ledger</span>
+</a>
+
+</body></html>

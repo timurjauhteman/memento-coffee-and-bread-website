@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Memento Cafe Location Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cf6317",
+                        "background-light": "#fcfaf8",
+                        "background-dark": "#1b130e",
+                        "paper": "#f4f0e8",
+                        "ink": "#2d2a26"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Courier Prime", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-light text-ink antialiased;
+            }
+        }
+        .paper-texture {
+            background-color: #f4f0e8;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCNuK9nyeCxXMjroNGnQbrlNQX5TjHcTrlxN7HRMNEzAeEiu2eDBQC2racbbia_Kb58SmrhRsyweW3woAF9KkUz6-9xJLvyHwLHJGEU8ZZ0M25nnnSq8ApkI_0Dm7TQ-JUxOGiQdU0QzQrJC2Jq-G0wcwJC8MaTQePoMTfGU-n2N1t4l5byWMcHrA8QSakOg5pv_uPu3qrwOrsUeaSUvyr0xHZDxTXwAoGUYdb0gui5utptmql9KISQ6dEE7jBBCxoLyuOOswjde0I);
+            background-blend-mode: multiply;
+        }
+        .dark .paper-texture {
+            background-color: #211811;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCWhcLQAe18PxA0HZ_9T7t7BNmgHL4lGbRCGAPAzwOHy_CRLJMw1On3qxl4woIMJcfkYfjhwX8m4FnR1-mKKCmIAe7iK3KIkinbwX3f2hQnxnHrqfOtVu2aJxYinhwReOindbG59CAMr1xDqcSI_A1wf7ajD4tscPEjr5faZ9gMAOSDaDlchJQQljkiLkA3-kq2JkF8CTnVBRT25Tp16pNL6x33LKKALmfDeohdPhzwxV-iRkbzsDxIE8IUwoHO79u6Cjm6Y45f18k);
+            background-blend-mode: lighten;
+        }
+        .typewriter {
+            font-family: "Courier Prime", monospace;
+        }
+        .ink-stamp {
+            transform: rotate(-3deg);
+            border: 2px solid #cf6317;
+            color: #cf6317;
+            padding: 4px 12px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+        .sepia-map {
+            filter: sepia(0.8) contrast(1.1) brightness(0.9) saturate(0.8);
+        }
+        .split-bg {
+            background: linear-gradient(to bottom, #fcfaf8 0%, #fcfaf8 350px, #f4f0e8 350px, #f4f0e8 100%);
+        }
+        .dark .split-bg {
+            background: linear-gradient(to bottom, #1b130e 0%, #1b130e 350px, #211811 350px, #211811 100%);
+        }
+        .authorized-note {
+            border: 2px solid #1b130e;
+            padding: 1.5rem;
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+        .dark .authorized-note {
+            border-color: #fcfaf8;
+        }
+        .ledger-line {
+            border-bottom: 1px solid rgba(207, 99, 23, 0.2);
+        }
+    </style>
+</head>
+<body class="split-bg min-h-screen transition-colors duration-300">
+<div class="layout-container flex flex-col items-center">
+<header class="w-full max-w-[1200px] flex items-center justify-between px-8 py-8">
+<div class="flex items-center gap-4">
+<div class="size-10 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-2xl font-black tracking-tighter uppercase leading-none">Memento</h1>
+<span class="typewriter text-[10px] uppercase tracking-widest text-primary font-bold">Cafe &amp; Bread</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="menu.html">Catalog</a>
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="reading_room.html">Roastery</a>
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="activities.html">Community Log</a>
+        <a class="typewriter text-xs font-bold  hover:text-primary transition-colors uppercase tracking-widest" href="index.html">Our Story</a>
+        <a href="location.html" class="bg-primary text-white px-6 py-2 typewriter text-xs font-bold uppercase tracking-widest shadow-sm hover:opacity-90 transition-opacity">
+                            Access Archive
+                        </a>
+        </nav>
+</header>
+<main class="w-full max-w-[1200px] px-6 py-8">
+<div class="paper-texture border border-black/10 dark:border-white/10 p-8 md:p-20 shadow-2xl relative">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 border-b border-primary/30 pb-12 mb-16">
+<div class="max-w-2xl">
+<div class="flex items-center gap-4 mb-4">
+<span class="typewriter text-[11px] bg-primary text-white px-2 py-0.5 font-bold uppercase">Coordinate Entry</span>
+<span class="typewriter text-[11px] opacity-60 uppercase">Registry ID: #LOC-1982-HQ</span>
+</div>
+<h2 class="text-6xl font-black uppercase mb-6 leading-[0.9]">Location Archive</h2>
+<p class="typewriter text-sm leading-relaxed opacity-80">
+                        Topographic data for the Memento central hearth. Visitors are advised to follow established transit corridors. All arrivals must be logged at the primary service counter.
+                    </p>
+</div>
+<div class="flex flex-col items-end gap-3 shrink-0">
+<div class="ink-stamp">
+<span class="typewriter text-xs">LOCATED: FL 33101</span>
+</div>
+<div class="ink-stamp !border-black dark:!border-white !text-black dark:!text-white opacity-40">
+<span class="typewriter text-[10px]">VERIFIED SITE</span>
+</div>
+</div>
+</div>
+<div class="space-y-12">
+<div class="relative w-full aspect-[21/9] border-2 border-primary/20 bg-paper overflow-hidden">
+<div class="absolute inset-0 bg-black/5 pointer-events-none z-10"></div>
+<img alt="Archival Map" class="sepia-map w-full h-full object-cover grayscale opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFtfovkksF8Vhmr-pAmYxngV412trL8MhXWLItrCAANrsYzqcIyB29cbrZs0StsuML1ADwNTeqhvU8fLbDHndpiiECTsmR5GE54sVvFIG8UrELEmaMaJVuULRtzePtV7dQj3AaZR4rby2AjuwizEQfhj7yt7lvcd-O2rjsrUqvikePa04maEbIPoY4p9ozYh8WVF2wgc0brjRGC7dCBVoj3QIwzsqt2AGjJpLJ8zqBV_5fxFakxfhcpUf4v5hnF2mGN9RlXi3pCPg"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg">location_on</span>
+<div class="absolute top-12 bg-ink text-white typewriter text-[10px] px-2 py-1 uppercase whitespace-nowrap shadow-xl">
+                                Site Alpha: Memento
+                            </div>
+</div>
+</div>
+<div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 40px 40px;"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-6 space-y-10">
+<section>
+<h3 class="typewriter text-xs font-bold text-primary uppercase tracking-[0.3em] mb-6">Facility Metadata</h3>
+<div class="space-y-6">
+<div class="flex gap-6 group">
+<div class="shrink-0 size-12 border border-primary/20 flex items-center justify-center bg-primary/5">
+<span class="material-symbols-outlined text-primary">pin_drop</span>
+</div>
+<div class="flex-1 border-b border-primary/10 pb-4">
+<p class="typewriter text-[10px] uppercase opacity-50 mb-1">Physical Coordinates</p>
+<p class="typewriter text-lg font-bold uppercase tracking-tight">42 Baker St. Hearth District<br/>London, W1U 8ED</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="shrink-0 size-12 border border-primary/20 flex items-center justify-center bg-primary/5">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div class="flex-1 border-b border-primary/10 pb-4">
+<p class="typewriter text-[10px] uppercase opacity-50 mb-1">Operational Windows</p>
+<div class="grid grid-cols-2 gap-x-8">
+<div class="typewriter text-sm flex justify-between uppercase"><span>Mon - Fri:</span> <span>07:00 - 19:00</span></div>
+<div class="typewriter text-sm flex justify-between uppercase"><span>Sat - Sun:</span> <span>08:30 - 21:00</span></div>
+</div>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="shrink-0 size-12 border border-primary/20 flex items-center justify-center bg-primary/5">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div class="flex-1 border-b border-primary/10 pb-4">
+<p class="typewriter text-[10px] uppercase opacity-50 mb-1">Analog Link</p>
+<p class="typewriter text-lg font-bold uppercase tracking-tight">+44 (0) 20 7946 0124</p>
+</div>
+</div>
+</div>
+</section>
+<button class="w-full bg-primary text-white p-6 flex items-center justify-between group hover:opacity-95 transition-all shadow-lg">
+<span class="typewriter text-sm font-black uppercase tracking-[0.2em]">Navigate to Archive</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">directions</span>
+</button>
+</div>
+<div class="lg:col-span-6">
+<div class="authorized-note paper-texture border-2 border-ink dark:border-white h-full flex flex-col justify-between">
+<div class="mb-8">
+<div class="flex justify-between items-start mb-6">
+<div class="typewriter text-[10px] font-bold uppercase tracking-widest opacity-60">
+                                        Communique Channel
+                                    </div>
+<div class="material-symbols-outlined text-primary">forum</div>
+</div>
+<h4 class="typewriter text-xl font-bold uppercase mb-4">Direct Message Link</h4>
+<p class="typewriter text-[12px] opacity-70 leading-relaxed uppercase">
+                                    To facilitate rapid response for table reservations, bread inquiries, or archival research, please utilize the digitized dispatch system below.
+                                </p>
+</div>
+<a class="flex items-center gap-4 bg-[#25D366] text-white p-4 rounded-sm hover:scale-[1.02] transition-transform" href="#">
+<svg class="size-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.658 1.43 5.63 1.432h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+<span class="typewriter text-xs font-bold uppercase tracking-widest">Connect via WhatsApp Dispatch</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-20 authorized-note paper-texture border-2 border-ink dark:border-white shadow-lg">
+<div class="text-center py-8">
+<p class="typewriter text-2xl font-black uppercase tracking-[0.2em] mb-4">Pause. Sip. Remember.</p>
+<div class="flex justify-center gap-4 opacity-50">
+<span class="h-px w-12 bg-ink dark:bg-white self-center"></span>
+<span class="typewriter text-[10px] uppercase">The Memento Mantra</span>
+<span class="h-px w-12 bg-ink dark:bg-white self-center"></span>
+</div>
+</div>
+<div class="flex justify-between items-end pt-6 border-t border-ink/10 dark:border-white/10">
+<div>
+<p class="typewriter text-[9px] uppercase opacity-60">Authorized Signature</p>
+<p class="font-serif italic text-lg opacity-80">E. Hawthorne</p>
+</div>
+<div class="text-right">
+<div class="ink-stamp !rotate-0 !border-primary/40 !text-primary/60">
+<span class="typewriter text-[10px]">VERIFIED RECORD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-primary/10 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-primary/10 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-primary/10 pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-primary/10 pointer-events-none"></div>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-0 border border-primary/20 divide-x divide-y md:divide-y-0 divide-primary/20">
+<a class="group p-8 hover:bg-primary transition-colors flex flex-col items-center text-center" href="menu.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-4 text-3xl">auto_stories</span>
+<h4 class="typewriter text-xs font-bold uppercase mb-2 group-hover:text-white">Recipe Ledger</h4>
+<p class="text-[10px] typewriter opacity-60 group-hover:text-white/80 uppercase">Formulaic Secrets of the Hearth</p>
+</a>
+<a class="group p-8 hover:bg-primary transition-colors flex flex-col items-center text-center" href="reading_room.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-4 text-3xl">local_library</span>
+<h4 class="typewriter text-xs font-bold uppercase mb-2 group-hover:text-white">The Reading Room</h4>
+<p class="text-[10px] typewriter opacity-60 group-hover:text-white/80 uppercase">Our Curated Periodical Selection</p>
+</a>
+<a class="group p-8 hover:bg-primary transition-colors flex flex-col items-center text-center" href="activities.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-4 text-3xl">history_edu</span>
+<h4 class="typewriter text-xs font-bold uppercase mb-2 group-hover:text-white">Daily Ledger</h4>
+<p class="text-[10px] typewriter opacity-60 group-hover:text-white/80 uppercase">Community Notes &amp; Observations</p>
+</a>
+</div>
+</main>
+<footer class="w-full py-20 text-center">
+<div class="flex flex-col items-center gap-6 mb-12">
+<div class="h-12 w-px bg-primary/30"></div>
+<p class="typewriter text-[11px] uppercase tracking-widest max-w-xs opacity-60">
+                Proprietary information of Memento Records Division. No duplication without authorization from the Curator.
+            </p>
+</div>
+<div class="flex justify-center gap-12 mb-8">
+<a class="typewriter text-[10px] uppercase hover:text-primary transition-colors font-bold" href="index.html">Site Index</a>
+<a class="typewriter text-[10px] uppercase hover:text-primary transition-colors font-bold" href="location.html">Access Rights</a>
+<a class="typewriter text-[10px] uppercase hover:text-primary transition-colors font-bold" href="reservation.html">File Inquiry</a>
+</div>
+<div class="opacity-40 text-[10px] tracking-[0.3em] uppercase">
+            © 1982-2024 Memento Cafe &amp; Bread. Records Division.
+        </div>
+</footer>
+</div>
+<a class="fixed bottom-10 right-10 z-50 flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full shadow-2xl hover:scale-110 transition-transform group" href="reservation.html">
+<span class="material-symbols-outlined text-3xl">edit_note</span>
+<span class="absolute right-20 bg-ink text-white typewriter text-[10px] px-3 py-1 uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Sign the Ledger</span>
+</a>
+
+</body></html>
